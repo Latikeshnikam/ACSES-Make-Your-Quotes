@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #e9eaea;
+  font-family: roboto;
+  user-select: none;
+}
+
+.container{
+  width: 450px;
+  margin: 30px auto;
+}
+
+.AddQuote,
+.replace,.delete{
+  width: 33%;
+  background: aliceblue;
+  border-bottom: 2px solid blue;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+ .form {
+            padding: 20px;
+            width: 40%;
+            height: 77%;
+            //border: 2px solid white;
+            position: fixed;
+        }
+
+        form {
+            position: relative;
+            left: 20%;
+            top: 5%;
+
+        }
+.AddQuote-form,
+.replace-form,.delete-form{
+  background:aliceblue;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 400px;
+}
+
+.input{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+  transform: all 0.5s ease;
+}
+
+.input:focus{
+  border: 2px solid #34b3a0;
+}
+
+ form .name input,
+        .quotes1 input {
+            width: 100%;
+            height: 3vh;
+
+        }
+
+        form div {
+            padding: 20px;
+        }
+
+        input {
+            border: 5px solid white;
+
+            box-shadow:
+                inset 0 0 4px rgba(0, 0, 0, 0.1),
+                0 0 8px rgba(0, 0, 0, 0.1),
+                0 0 16px rgba(0, 0, 0, 0.1),
+                0 0 24px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 0 10px 0;
+        }
+
+span a{
+  text-decoration: none;
+  color: #000;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #3e3e40;
+  font-family: roboto;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #3e3e40;
+  font-family: roboto;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #3e3e40;
+  font-family: roboto;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #3e3e40;
+  font-family: roboto;
+}

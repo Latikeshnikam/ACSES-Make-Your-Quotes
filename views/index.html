@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Login and Signup form </title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+ <style type="text/css">
+        * {
+
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: aliceblue;
+
+        }
+
+        header {
+            position: fixed;
+            background-color: #1565c0;
+            margin: 0;
+            width: 100%;
+            padding: 20px;
+            border-bottom: 2px solid #26a69a;
+            text-align: center;
+            font-family: monospace;
+            font-size: 140%;
+            color: white;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-family: sans-serif;
+        }
+
+        .form {
+            padding: 20px;
+            width: 40%;
+            height: 77%;
+            //border: 2px solid white;
+            position: fixed;
+        }
+
+        form, .container{
+            position: relative;
+            left: 20%;
+            top: 35%;
+
+
+        }
+
+        form .name input,
+        .quotes1 input {
+            width: 70%;
+            height: 3vh;
+
+        }
+
+        form div {
+            padding: 20px;
+        }
+
+        input, button {
+            border: 5px solid white;
+
+            box-shadow:
+                inset 0 0 4px rgba(0, 0, 0, 0.1),
+                0 0 8px rgba(0, 0, 0, 0.1),
+                0 0 16px rgba(0, 0, 0, 0.1),
+                0 0 24px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 0 10px 0;
+        }
+
+        .submit {
+            position: relative;
+            left: 25%;
+
+        }
+
+        .ejs {
+            position: absolute;
+            top: 20%;
+            left: 47%;
+            padding: 20px;
+            width: 50%;
+
+            height: 77vh;
+
+        }
+
+        .ejs .quote {
+            padding: 30px;
+            text-align: center;
+            margin: 15px;
+            //  border-bottom: 2px solid  #3b5998;
+
+
+            box-shadow:
+                inset 0 0 5px rgba(0, 0, 0, 0.1),
+                0 0 10px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(0, 0, 0, 0.1);
+
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .ejs .name {
+            font-size: 190%;
+            font-weight: bolder;
+            color: #1565c0;
+            border-bottom: 2px solid blue;
+
+
+
+        }
+
+        .ejs .quo {
+            font-size: 120%;
+        }
+
+    </style>
+  
+</head>
+
+<body>
+ <header>
+        <h1>ACSES</h1>
+
+        <h2>Make your Quotes</h2>
+    </header>
+    <div class="form">
+    <div class="container">
+      
+      <div class="AddQuote">Add Quote</div>
+      <div class="replace">Replace Quote</div>
+      <div class="delete">Delete Quote</div>
+      
+       <div class="AddQuote-form">
+         
+                 <form action="/quotes" method="POST">
+            <div class="name"> <input type="text" placeholder="Enter Your Name Here" name="name"></div>
+            <div class="quotes1"><input type="text" placeholder="Quote" name="quotes1"></div>
+            <div class="submit">
+                <input type="submit" value="Add Quote">
+               
+            </div>
+        </form>
+       </div>
+      
+      <div class="replace-form">
+          <form action="/quote" method="POST">
+    <div class="name"> <input type="text" placeholder="name" name="replace_name" required=""></div>
+    <div class="quotes1"> <input type="text" placeholder="new quote" name="new_quote" required=""></div>
+    <br>
+  <div class="submit"><button id="update" type="submit"> Replace </button></div>
+  </form>
+</div>
+ <div class="delete-form">
+  <form action="/delete" method="POST">
+    <div class="quotes1"><input type="text" placeholder="name" name="delete_name" required=""></div>
+    <br>
+ <div class="submit"> <button id="delete">Delete</button></div>
+</form>
+</div>
+</div>
+  </div>
+ 
+  
+    <div class="ejs">
+        <ul class="quotes">
+            <% for(var i=0; i<quotes.length; i++) {%>
+            <li class="quote">
+
+                <span class="name">
+                    <%= i+1%>.
+                    <%= quotes[i].name %>
+                </span>
+                <br>
+                <br>
+                <br>
+                <span class="quo">
+
+                    <%= quotes[i].quote %>
+                </span>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+      <script src="main.js"></script> 
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
